@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'login_screen.dart';
+
 class RoleSelectionScreen extends StatelessWidget {
   const RoleSelectionScreen({super.key});
 
@@ -73,8 +75,13 @@ class RoleSelectionScreen extends StatelessWidget {
                     color: Colors.blueGrey.shade50,
                     iconColor: const Color(0xFF003366),
                     onTap: () {
-                      // Navigate to Client Login (ToDo)
-                      print("Client Selected");
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) =>
+                              const LoginScreen(userRole: 'Client'),
+                        ),
+                      );
                     },
                   ),
                   const SizedBox(height: 16),

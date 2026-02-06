@@ -96,8 +96,13 @@ class RoleSelectionScreen extends StatelessWidget {
                     isHighlight: true,
                     // Highlights the 'Worker' option
                     onTap: () {
-                      // Navigate to Provider Login (ToDo)
-                      print("Provider Selected");
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) =>
+                              const LoginScreen(userRole: 'Provider'),
+                        ),
+                      );
                     },
                   ),
                 ],

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'client/client_home_screen.dart';
+
 class LoginScreen extends StatefulWidget {
   final String userRole; // 'Client' or 'Provider'
 
@@ -132,6 +134,20 @@ class _LoginScreenState extends State<LoginScreen> {
                     print("Email: ${_emailController.text}");
 
                     // Navigate to Dashboard (Placeholder for now)
+
+                    // Check if user is a client (Simple logic for now)
+                    if (widget.userRole == 'Client') {
+                      Navigator.pushAndRemoveUntil(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const ClientHomeScreen()),
+                            (
+                            route) => false, // This removes the back button so they can't go back to login
+                      );
+                    } else {
+                      // ToDo: Navigate to Provider Dashboard
+                      print("Provider Dashboard not built yet");
+                    }
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: primaryColor,

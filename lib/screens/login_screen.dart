@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'client/client_home_screen.dart';
+import 'provider/provider_home_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   final String userRole; // 'Client' or 'Provider'
@@ -145,8 +146,13 @@ class _LoginScreenState extends State<LoginScreen> {
                             route) => false, // This removes the back button so they can't go back to login
                       );
                     } else {
-                      // ToDo: Navigate to Provider Dashboard
-                      print("Provider Dashboard not built yet");
+                      // Now we link the Provider Dashboard!
+                      Navigator.pushAndRemoveUntil(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const ProviderHomeScreen()),
+                            (route) => false,
+                      );
                     }
                   },
                   style: ElevatedButton.styleFrom(

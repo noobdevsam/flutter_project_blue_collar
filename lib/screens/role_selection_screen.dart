@@ -15,7 +15,7 @@ class RoleSelectionScreen extends StatelessWidget {
         children: [
           // Background Design (Top Navy Wave)
           Container(
-            height: size.height * 0.4,
+            height: size.height * 0.3,
             decoration: const BoxDecoration(
               color: Color(0xFF003366), // Brand Navy Blue
               borderRadius: BorderRadius.only(

@@ -36,7 +36,7 @@ class _ProviderHomeScreenState extends State<ProviderHomeScreen> {
               ),
               Switch(
                 value: isOnline,
-                activeColor: Colors.greenAccent,
+                activeThumbColor: Colors.greenAccent,
                 onChanged: (val) {
                   setState(() {
                     isOnline = val;
